@@ -7,6 +7,12 @@ buildscript {
         classpath 'com.android.tools.build:gradle:4.2.2'
     }
 }
+allprojects {
+    repositories {
+        google() // 添加 Google 仓库
+        mavenCentral() // 添加 Maven Central 仓库
+    }
+}
 apply plugin: 'com.android.library'
 
 android {
@@ -30,7 +36,9 @@ android {
 
 // 配置发布到 Maven 仓库
 apply plugin: 'maven-publish'
-
+dependencies {
+    lintChecks 'com.android.tools.lint:lint-gradle:27.2.2' // 添加 Lint 依赖
+}
 publishing {
     publications {
         aar(MavenPublication) {
