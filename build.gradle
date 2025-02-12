@@ -1,0 +1,34 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 33
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 1
+        versionName "4.5.1-1"
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+// 配置发布到 Maven 仓库
+apply plugin: 'maven-publish'
+
+publishing {
+    publications {
+        aar(MavenPublication) {
+            groupId = 'com.github.bossmoney' // 替换为你的 GitHub 用户名
+            artifactId = 'my-repo' // 替换为你的仓库名
+            version = '4.5.1-1' // 版本号
+
+            // 指定 .aar 文件路径
+            artifact("$buildDir/outputs/aar/ffmpeg-kit-https-gpl-4.5.1-1.aar")
+        }
+    }
+}
