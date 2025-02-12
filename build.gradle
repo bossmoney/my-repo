@@ -17,10 +17,12 @@ android {
         targetSdkVersion 33
         versionCode 1
         versionName "4.5.1-1"
+        namespace "com.example.ffmpegkit" // 替换为你的包名
     }
 
     sourceSets {
         main {
+            manifest.srcFile 'src/main/AndroidManifest.xml'
             jniLibs.srcDirs = ['libs']
         }
     }

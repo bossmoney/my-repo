@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.ffmpegkit"> <!-- 替换为你的包名 -->
+
+    <application>
+        <!-- 如果有 Activity 或其他组件，可以在这里声明 -->
+    </application>
+</manifest>
